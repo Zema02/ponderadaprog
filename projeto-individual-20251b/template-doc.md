@@ -18,9 +18,11 @@
 
 ## <a name="c1"></a>1. Introdução (semana 3)
 
-*Preencha com até 300 palavras – sem necessidade de fonte.*
+O sistema que vou desenvolver é um Gerenciador de Tarefas para ajudar estudantes a se organizarem melhor no dia a dia. A ideia é criar uma aplicação web simples e prática, onde o usuário possa cadastrar suas tarefas, marcar prazos, acompanhar o andamento e excluir atividades já concluídas.
 
-*Descreva brevemente o sistema que você irá desenvolver.*
+O foco do projeto é facilitar a vida de quem precisa lidar com várias responsabilidades ao mesmo tempo, como trabalhos de faculdade, projetos pessoais e estágios. O sistema terá um backend para armazenar os dados das tarefas e dos usuários, um frontend para o usuário interagir de forma fácil, e a comunicação entre eles será feita por meio de uma API.
+
+O objetivo principal é entregar uma ferramenta que ajude no controle das atividades e na organização do tempo, permitindo que o usuário visualize rapidamente tudo o que precisa ser feito e evite perder prazos importantes. A construção do projeto também vai servir para colocar em prática os conceitos de desenvolvimento web estudados no módulo.
 
 ---
 
