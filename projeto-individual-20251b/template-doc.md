@@ -42,7 +42,7 @@
 
 <div align="center">
 <sub>Figura 1 - Lucas Souza</sub>
-<img src="../assets/personaprojetoind.png" width="100%">
+<img src="assets/personaprojetoind.png" width="100%">
 <sup>Fonte: Material produzido pelo autor (2025)</sup>
 </div>
 
