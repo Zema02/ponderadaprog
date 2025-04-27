@@ -16,11 +16,13 @@
 
 <br>
 
-## <a name="c1"></a>1. Introdução (semana 3)
+## <a name="c1"></a>1. Introdução 
 
-*Preencha com até 300 palavras – sem necessidade de fonte.*
+O sistema que vou desenvolver é um Gerenciador de Tarefas para ajudar estudantes a se organizarem melhor no dia a dia. A ideia é criar uma aplicação web simples e prática, onde o usuário possa cadastrar suas tarefas, marcar prazos, acompanhar o andamento e excluir atividades já concluídas.
 
-*Descreva brevemente o sistema que você irá desenvolver.*
+O foco do projeto é facilitar a vida de quem precisa lidar com várias responsabilidades ao mesmo tempo, como trabalhos de faculdade, projetos pessoais e estágios. O sistema terá um backend para armazenar os dados das tarefas e dos usuários, um frontend para o usuário interagir de forma fácil, e a comunicação entre eles será feita por meio de uma API.
+
+O objetivo principal é entregar uma ferramenta que ajude no controle das atividades e na organização do tempo, permitindo que o usuário visualize rapidamente tudo o que precisa ser feito e evite perder prazos importantes. A construção do projeto também vai servir para colocar em prática os conceitos de desenvolvimento web estudados no módulo.
 
 ---
 
@@ -79,7 +81,34 @@ _"Com tudo organizado num só lugar, eu consigo focar melhor e me preocupar meno
 
 ### 2.2. User Stories
 
-*Posicione aqui a lista de User Stories levantadas para o projeto. Siga o template de User Stories e utilize a mesma referência USXX no roadmap de seu quadro Kanban. Indique todas as User Stories mapeadas, mesmo aquelas que não forem implementadas ao longo do projeto. Não se esqueça de explicar o INVEST das 5 User Stories prioritárias.*
+
+US01 | Como estudante de Engenharia de Software, quero criar novas tarefas no sistema, para que eu possa organizar melhor meus estudos e compromissos.
+
+US02 | Como estudante de Engenharia de Software, quero visualizar todas as minhas tarefas em uma lista, para que eu consiga acompanhar o que já foi feito e o que ainda falta.
+
+US03 | Como estudante de Engenharia de Software, quero alterar o status de uma tarefa (pendente, em andamento ou concluída), para que eu possa gerenciar melhor o meu progresso nas atividades.
+
+---
+
+### Análise da US01 com base nos critérios INVEST:
+
+**I – Independente:**  
+A criação de tarefas pode ser desenvolvida separadamente das outras funcionalidades, como visualização ou edição.
+
+**N – Negociável:**  
+Podemos discutir com o professor ou colegas quais campos serão obrigatórios na criação da tarefa (por exemplo, se precisa ou não ter prazo).
+
+**V – Valiosa:**  
+Organizar tarefas é essencial para quem precisa administrar vários compromissos. Ajuda muito na produtividade do usuário.
+
+**E – Estimável:**  
+É possível estimar o esforço para implementar a criação de uma tarefa, pois envolve criar um formulário e armazenar os dados.
+
+**S – Pequena (Small):**  
+A funcionalidade é simples e focada: criar uma nova tarefa, sem misturar com outras ações mais complexas.
+
+**T – Testável:**  
+Podemos testar criando uma tarefa e verificando se ela aparece corretamente no sistema.
 
 ---
 
