@@ -26,9 +26,56 @@
 
 ## <a name="c2"></a>2. Visão Geral da Aplicação Web
 
-### 2.1. Personas
+### 2.1. Personas 
 
-*Posicione aqui suas Personas em forma de texto markdown com imagens, ou como imagem de template preenchido. Atualize esta seção ao longo do módulo se necessário.*
+&emsp;Segundo Page Laubheimer, especialista sênior em Experiência do Usuário no Nielsen Norman Group, personas são representações fictícias — mas que guardam características identificáveis e reais — do público alvo de determinado produto. Elas ajudam a entender melhor as dores, desejos e comportamentos dos usuários, permitindo criar soluções mais alinhadas com o que eles realmente precisam.
+
+&emsp;Existem três tipos principais de personas: proto personas, personas qualitativas e personas estatísticas.
+
+- A proto persona é baseada no conhecimento prévio da equipe sobre o público, sem necessidade de pesquisa de campo.
+- A persona qualitativa é criada a partir de entrevistas com pequenos grupos, buscando identificar motivações e dificuldades pessoais.
+- A persona estatística é baseada em dados quantitativos de uma amostra maior, normalmente mais de 100 usuários.
+
+&emsp;No caso do projeto do Gerenciador de Tarefas, optou-se por utilizar uma **proto persona**, pois não foi realizada uma pesquisa com usuários reais. A persona foi criada a partir da vivência comum de estudantes de Engenharia de Software, identificando necessidades reais de organização de tarefas acadêmicas e pessoais.
+
+&emsp;As informações foram baseadas em experiências típicas de alunos de graduação, considerando desafios como gerenciamento de prazos, volume de trabalhos e conciliação entre estudo e estágio. A seguir, apresentamos a persona criada:
+
+<div align="center">
+<sub>Figura 1 - Lucas Souza</sub>
+<img src="../assets/personaprojetoind.png" width="100%">
+<sup>Fonte: Material produzido pelo autor (2025)</sup>
+</div>
+
+&emsp;Para a persona de Lucas, as informações estão abaixo:
+
+**Perfil:**
+- Nome: Lucas Souza
+- Gênero: Masculino
+- Idade: 20 anos
+- Cidade: São Paulo - SP
+- Posição: Estudante de Engenharia de Software
+
+**Biografia:**
+- Lucas está no segundo semestre de Engenharia de Software e faz estágio na área de TI. Apesar de gostar muito da área, ele tem dificuldades para organizar sua rotina de estudos, prazos de entrega e atividades do estágio. Muitas vezes esquece trabalhos importantes e sente que isso atrapalha seu desempenho acadêmico.
+
+**Dores:**
+- Dificuldade em controlar prazos de entrega.
+- Esquecimento de tarefas importantes da faculdade e do estágio.
+- Falta de uma ferramenta simples para gerenciar suas atividades em um único lugar.
+
+**Atividades:**
+- Frequentar aulas presenciais e online.
+- Entregar trabalhos e participar de projetos acadêmicos.
+- Cumprir tarefas do estágio em tecnologia.
+- Tentar equilibrar estudos, estágio e vida pessoal.
+
+**Desejos:**
+- Ter uma ferramenta simples e rápida para organizar todas as suas tarefas.
+- Conseguir visualizar prazos e prioridades de forma prática.
+- Reduzir o estresse causado por esquecimentos e atrasos.
+
+**Citação:**
+_"Com tudo organizado num só lugar, eu consigo focar melhor e me preocupar menos com o que posso esquecer."_as em forma de texto markdown com imagens, ou como imagem de template preenchido. Atualize esta seção ao longo do módulo se necessário.*
 
 ### 2.2. User Stories
 
