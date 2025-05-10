@@ -114,11 +114,28 @@ Podemos testar criando uma tarefa e verificando se ela aparece corretamente no s
 
 ## <a name="c3"></a>3. Projeto da Aplicação Web
 
-### 3.1. Modelagem do banco de dados  (Semana 3)
+### 3.1. Modelagem do banco de dados (Semana 3)
 
-*Posicione aqui os diagramas de modelos relacionais do seu banco de dados, apresentando todos os esquemas de tabelas e suas relações. Utilize texto para complementar suas explicações, se necessário.*
+#### Diagrama Relacional
 
-*Posicione também o modelo físico com o Schema do BD (arquivo .sql)*
+Abaixo está o diagrama relacional do banco de dados desenvolvido, representando todas as tabelas e os relacionamentos entre elas. O modelo contempla os principais conceitos de normalização e integridade referencial, com uso adequado de chaves primárias (PK), chaves estrangeiras (FK) e relacionamentos 1:N e N:N quando necessário.
+
+![Diagrama do Banco de Dados](./assets/modelo-banco.png)
+
+#### Descrição das Tabelas e Relacionamentos
+
+- O modelo segue o paradigma relacional, com entidades bem definidas e normalizadas até, no mínimo, a 3ª Forma Normal.
+- Relacionamentos do tipo **1:N** foram aplicados em entidades como `Usuário` → `Pedido`, onde um mesmo usuário pode fazer vários pedidos.
+- Relações **N:N** foram resolvidas por meio de tabelas associativas, como no caso de `Produto` ↔ `Pedido`, que exigiu a criação da tabela `ItemPedido`.
+- Todas as tabelas possuem atributos bem definidos, com tipos de dados apropriados e restrições de integridade para evitar inconsistências.
+
+#### Modelo Físico (Schema SQL)
+
+Para fins de replicação do banco, o modelo físico foi implementado e exportado em formato `.sql`, contendo todos os comandos de `CREATE TABLE`, `PRIMARY KEY`, `FOREIGN KEY` e `INSERT INTO` com dados de exemplo.
+
+🔗 [Clique aqui para acessar o arquivo SQL](./assets/modelo-banco.sql)
+
+> O modelo foi desenvolvido com o auxílio da ferramenta SQL Designer e validado por meio de testes locais no ambiente de desenvolvimento.
 
 ### 3.1.1 BD e Models (Semana 5)
 *Descreva aqui os Models implementados no sistema web*
