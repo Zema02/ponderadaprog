@@ -44,7 +44,7 @@ O objetivo principal é entregar uma ferramenta que ajude no controle das ativid
 
 <div align="center">
 <sub>Figura 1 - Lucas Souza</sub>
-<img src="assets/personaprojetoind.png" width="100%">
+<img src="img/personaprojetoind.png" width="100%">
 <sup>Fonte: Material produzido pelo autor (2025)</sup>
 </div>
 
@@ -120,7 +120,7 @@ Podemos testar criando uma tarefa e verificando se ela aparece corretamente no s
 
 Abaixo está o diagrama relacional do banco de dados desenvolvido, representando todas as tabelas e os relacionamentos entre elas. O modelo contempla os principais conceitos de normalização e integridade referencial, com uso adequado de chaves primárias (PK), chaves estrangeiras (FK) e relacionamentos 1:N e N:N quando necessário.
 
-![Diagrama do Banco de Dados](./assets/modelo-banco.png)
+![Diagrama do Banco de Dados](./img/modelo-banco.png)
 
 #### Descrição das Tabelas e Relacionamentos
 
@@ -133,7 +133,7 @@ Abaixo está o diagrama relacional do banco de dados desenvolvido, representando
 
 Para fins de replicação do banco, o modelo físico foi implementado e exportado em formato `.sql`, contendo todos os comandos de `CREATE TABLE`, `PRIMARY KEY`, `FOREIGN KEY` e `INSERT INTO` com dados de exemplo.
 
-🔗 [Clique aqui para acessar o arquivo SQL](./assets/modelo-banco.sql)
+🔗 [Clique aqui para acessar o arquivo SQL](./img/modelo-banco.sql)
 
 > O modelo foi desenvolvido com o auxílio da ferramenta SQL Designer e validado por meio de testes locais no ambiente de desenvolvimento.
 
@@ -152,8 +152,64 @@ Para fins de replicação do banco, o modelo físico foi implementado e exportad
 *Adicione as setas e explicações sobre como os dados fluem entre o Model, Controller e View.*
 
 ### 3.3. Wireframes
+Nesta seção, apresentamos os wireframes desenvolvidos para o sistema de Gerenciamento de Tarefas proposto no Projeto Individual. O foco foi representar a estrutura e organização da interface, com base nas funcionalidades descritas nas User Stories da entrega anterior.
 
-*Posicione aqui as imagens do wireframe construído para sua solução e, opcionalmente, o link para acesso (mantenha o link sempre público para visualização).*
+Os wireframes foram criados em formato desktop (landscape), visando atender ao contexto de uso da persona principal (Lucas Souza), que utiliza o sistema durante atividades acadêmicas e de estágio. A proposta visual é minimalista e estrutural, destacando os fluxos de navegação e os elementos essenciais da experiência do usuário.
+
+<div align="center">
+<sub>Figura 1 - Wireframe</sub>
+<img src="img/wireframe1.png" width="100%">
+<sup>Fonte: Material produzido pelo autor (2025)</sup>
+</div>
+
+Tela 1 — Listagem de Tarefas (User Story US02)
+
+Esta é a tela principal do sistema. O usuário tem acesso rápido à visualização de suas tarefas, podendo filtrá-las por status (pendente, em andamento, concluída) ou por categoria. Cada tarefa é apresentada como um cartão simples, exibindo título, prazo e status, com um botão de edição.
+
+### Elementos principais:
+- Botão “Nova Tarefa” no topo
+- Filtros por status (botões)
+- Filtro por categoria (dropdown)
+- Cartões com título, data e botão “Editar”
+
+
+<div align="center">
+<sub>Figura 2 - Wireframe</sub>
+<img src="img/wireframe2.png" width="100%">
+<sup>Fonte: Material produzido pelo autor (2025)</sup>
+</div>
+
+
+Tela 2 — Cadastro de Nova Tarefa (User Story US01)
+
+Ao clicar em “Nova Tarefa”, o usuário visualiza um formulário modal simples com os campos essenciais para criação da tarefa: título, descrição, prazo, categoria e status inicial. A proposta é que essa criação seja rápida e objetiva.
+
+### Campos presentes:
+
+- Título
+- Descrição
+- Prazo (campo de data)
+- Categoria (menu suspenso)
+- Status (dropdown com opção padrão “Pendente”)
+
+<div align="center">
+<sub>Figura 3 - Wireframe</sub>
+<img src="img/wireframe3.png" width="100%">
+<sup>Fonte: Material produzido pelo autor (2025)</sup>
+</div>
+
+Tela 3 — Edição de Tarefa (User Story US03)
+
+A tela de edição aparece ao clicar no botão “Editar” de qualquer tarefa listada. O formulário é exibido em um modal com os dados já preenchidos. O usuário pode alterar qualquer campo, principalmente o status da tarefa, de forma rápida.
+
+### Campos editáveis:
+
+- Título
+- Descrição
+- Prazo
+- Categoria
+- Status (Pendente, Em andamento, Concluída)
+
 
 ### 3.4. Guia de estilos
 
@@ -177,10 +233,119 @@ Para fins de replicação do banco, o modelo físico foi implementado e exportad
 
 *Posicione aqui algumas imagens demonstrativas de seu protótipo de alta fidelidade e o link para acesso ao protótipo completo (mantenha o link sempre público para visualização).*
 
-### 3.6. WebAPI e endpoints (Semana 5)
+### 3.6. WebAPI e endpoints 
+O projeto segue o padrão MVC para separar responsabilidades:
 
-*Utilize um link para outra página de documentação contendo a descrição completa de cada endpoint. Ou descreva aqui cada endpoint criado para seu sistema.*  
+- **Model**: Representado por queries SQL diretas executadas via `pg`. A modelagem das entidades está definida no script `init.sql`, com relacionamentos entre `users`, `tasks` e `categories`.
 
+- **View**: Implementada com EJS, permitindo a renderização de uma página inicial simples acessada via a rota `/`.
+
+- **Controller**: Arquivos JavaScript responsáveis por receber as requisições, validar os dados, executar comandos SQL e retornar a resposta adequada.
+
+- **Rotas (Router)**: Definidas em `routes/index.js`, conectam URLs aos controllers. As rotas da API seguem o prefixo `/api`.
+
+
+
+## Conexão com o Banco de Dados
+
+A conexão com o PostgreSQL é realizada com o pacote `pg` e configurada via variáveis de ambiente no arquivo `.env`, garantindo segurança e portabilidade. A estrutura esperada do arquivo `.env` é:
+
+```env
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=seu_usuario
+DB_PASSWORD=sua_senha
+DB_NAME=tarefas_db
+```
+
+---
+
+## Migração e Inicialização do Banco
+
+A migração é feita com um script JavaScript (`migrations/migrate.js`) que executa automaticamente os comandos SQL do arquivo `init.sql`, criando todas as tabelas e constraints:
+
+- `users`: armazena nome, e-mail e senha dos usuários
+- `categories`: define categorias atribuídas às tarefas
+- `tasks`: armazena título, descrição, status, prazo, usuário responsável e categoria vinculada
+
+### Comando para rodar a migração:
+```bash
+npm run migrate
+```
+
+---
+
+## API REST — Endpoints Implementados
+
+O servidor oferece uma API RESTful com rotas que permitem gerenciar os recursos da aplicação.
+
+### Tarefas `/api/tarefas`
+- `GET /api/tarefas` — listar todas as tarefas
+- `POST /api/tarefas` — criar uma nova tarefa
+- `PUT /api/tarefas/:id` — editar uma tarefa existente
+- `DELETE /api/tarefas/:id` — remover uma tarefa
+
+### 👤 Usuários `/api/users`
+- `GET /api/users` — listar todos os usuários
+- `POST /api/users` — cadastrar novo usuário
+
+### 🗂 Categorias `/api/categories`
+- `GET /api/categories` — listar todas as categorias
+- `POST /api/categories` — cadastrar nova categoria
+
+---
+
+## Organização do Projeto
+
+```
+meu-projeto/
+│
+├── config/               # Conexão com o banco (PostgreSQL)
+├── controllers/          # Lógica da aplicação
+├── migrations/           # Script SQL + migrador em JS
+├── models/               # (opcional) representações estruturais
+├── routes/               # Rotas da aplicação
+├── views/                # Página inicial com EJS
+├── assets/               # Estáticos (css, imagens)
+├── api-testes.rest       # Arquivo para testes REST no VSCode
+├── .env                  # Variáveis de ambiente (não versionado)
+├── server.js             # Inicialização do servidor
+└── modelo-banco.sql      # Script de criação do banco
+```
+
+---
+
+
+
+## Diagrama de Arquitetura MVC
+
+![Diagrama de Arquitetura MVC](./img/mvc-arquitetura.png)
+
+ Este diagrama representa a arquitetura do sistema web seguindo o padrão **MVC (Model-View-Controller)**, ilustrando o fluxo completo de dados desde o momento em que o **usuário** realiza uma requisição até a resposta final.  
+
+> O processo inicia com o **usuário/cliente**, que pode ser um navegador acessando uma página EJS ou uma ferramenta como o Thunder Client fazendo uma requisição para a API. Essa requisição é tratada pela **View**, que renderiza uma interface (como `home.ejs`) ou encaminha os dados diretamente para o backend.
+
+> A **camada Controller**, implementada com o framework **Express**, é responsável por receber essas requisições, validar os dados e invocar a camada Model. Ela contém a lógica de negócio da aplicação e define como cada rota deve se comportar.
+
+> A **camada Model** não utiliza ORM. Em vez disso, executa comandos SQL diretamente via o pacote `pg`, acessando uma **pool de conexões**. Essa camada é responsável por interagir com o banco de dados, executando comandos como `SELECT`, `INSERT`, `UPDATE` e `DELETE`.
+
+> Por fim, os dados são persistidos ou recuperados do **banco de dados PostgreSQL**, que contém as tabelas `users`, `tasks` e `categories`. As migrações de criação do banco foram realizadas com base no script `init.sql`.
+
+> O fluxo é concluído com a **resposta sendo retornada ao usuário**, podendo ser uma página renderizada (via EJS) ou um objeto JSON com os dados solicitados pela API.
+
+
+
+---
+
+
+## Testes da API
+
+Todos os endpoints podem ser testados utilizando:
+
+- [✔️] Thunder Client (extensão para VSCode)
+- [✔️] REST Client com o arquivo `api-testes.rest`
+
+O arquivo `.rest` está pronto com todas as requisições (GET, POST, PUT, DELETE) e pode ser executado diretamente clicando em **"Send Request"** com a extensão instalada.
 ### 3.7 Interface e Navegação (Semana 7)
 
 *Descreva e ilustre aqui o desenvolvimento do frontend do sistema web, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar.*

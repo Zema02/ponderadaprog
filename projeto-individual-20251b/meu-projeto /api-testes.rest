@@ -1,0 +1,69 @@
+### Criar tarefa
+POST http://localhost:3000/api/tarefas
+Content-Type: application/json
+
+{
+  "title": "Estudar PostgreSQL",
+  "description": "Praticar comandos e migração",
+  "due_date": "2025-05-22",
+  "status": "pendente",
+  "user_id": 1,
+  "category_id": 1
+}
+
+###
+
+### Listar tarefas
+GET http://localhost:3000/api/tarefas
+
+###
+
+### Atualizar tarefa
+PUT http://localhost:3000/api/tarefas/14
+Content-Type: application/json
+
+{
+  "title": "Revisar Node.js",
+  "description": "Estudar rotas e middlewares",
+  "due_date": "2025-05-25",
+  "status": "em andamento",
+  "user_id": 1,
+  "category_id": 1
+}
+
+###
+
+### Excluir tarefa (troque o ID se necessário)
+DELETE http://localhost:3000/api/tarefas/1
+
+###
+
+### Criar usuário
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+  "name": "João",
+  "email": "joao@example.com",
+  "password": "senha456"
+}
+
+###
+
+### Listar usuários
+GET http://localhost:3000/api/users
+
+###
+
+### Criar categoria
+POST http://localhost:3000/api/categories
+Content-Type: application/json
+
+{
+  "name": "Trabalho"
+}
+
+###
+
+### Listar categorias
+GET http://localhost:3000/api/categories
