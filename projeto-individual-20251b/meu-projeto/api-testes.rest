@@ -19,7 +19,7 @@ GET http://localhost:3000/api/tarefas
 ###
 
 ### Atualizar tarefa
-PUT http://localhost:3000/api/tarefas/14
+PUT http://localhost:3000/api/tarefas/4
 Content-Type: application/json
 
 {
@@ -34,7 +34,7 @@ Content-Type: application/json
 ###
 
 ### Excluir tarefa (troque o ID se necessário)
-DELETE http://localhost:3000/api/tarefas/1
+DELETE http://localhost:3000/api/tarefas/5
 
 ###
 
@@ -44,7 +44,7 @@ Content-Type: application/json
 
 {
   "name": "João",
-  "email": "joao@example.com",
+  "email": "joao@example123.com",
   "password": "senha456"
 }
 
