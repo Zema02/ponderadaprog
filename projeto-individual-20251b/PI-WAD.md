@@ -210,24 +210,67 @@ A tela de edição aparece ao clicar no botão “Editar” de qualquer tarefa l
 - Categoria
 - Status (Pendente, Em andamento, Concluída)
 
+---
 
-### 3.4. Guia de estilos
+### 3.4. Guia de Estilos
 
-*Descreva aqui orientações gerais para o leitor sobre como utilizar os componentes do guia de estilos de sua solução.*
+Este guia de estilos tem como objetivo garantir a consistência visual e funcional da solução, servindo como referência para desenvolvedores e designers. A seguir, são apresentados os principais elementos de tipografia, paleta de cores, componentes e diretrizes visuais utilizadas no projeto.
+
+<div align="center">
+<sub>Figura  - Guia de estilo</sub>
+<img src="img/Guiadeestilo.png" width="100%">
+<sup>Fonte: Material produzido pelo autor (2025)</sup>
+</div>
+
+---
+
+
+#### **Componentes**
+
+Os principais componentes da interface são padronizados e seguem a tipografia e cores acima:
+
+- **Botões**:
+  - Ver tarefas, Criar, Salvar, Criar categoria: fundo `#0D80F2`, texto branco.
+  - Cancelar, Novo usuário: fundo claro com bordas discretas.
+- **Formulários**:
+  - Campos para criação de tarefas e novos usuários.
+- **Avatares e ícones**:
+  - Ícones padrão e avatares circulares.
+- **Botão Editar**:
+  - Estilo claro com destaque sutil.
+
+---
+
 
 #### 3.4.1. Cores
 
-*Apresente aqui a paleta de cores, com seus códigos de aplicação e suas respectivas funções.*
+A paleta de cores da aplicação foi definida para garantir acessibilidade, consistência e clareza visual. A seguir estão os códigos hexadecimais utilizados e suas respectivas funções na interface:
+
+| Cor       | Código Hex | Função Principal                                      |
+|-----------|-------------|-------------------------------------------------------|
+| Azul      | `#0D80F2`   | Cor principal para botões de ação e links            |
+| Azul escuro | `#0D141C` | Fundo de componentes, contrastes fortes e textos     |
+| Azul claro | `#E8EDF5`  | Fundo de seções, áreas secundárias                   |
+| Azul médio | `#4A739C`  | Suporte a elementos de destaque                      |
+| Branco     | `#FFFFFF`  | Fundo geral, áreas de conteúdo                       |
+| Azul pálido| `#CFDBE8`  | Fundo de campos de formulário e painéis leves        |
+| Cinza claro| `#E5E8EB`  | Bordas, divisórias, elementos neutros                |
+| Off white  | `#F7FAFC`  | Fundo alternativo e áreas com baixa hierarquia       |
+| Marrom     | `#746666`  | Texto secundário, ícones desativados, detalhes visuais|
 
 #### 3.4.2. Tipografia
 
-*Apresente aqui a tipografia da solução, com famílias de fontes e suas respectivas funções.*
+A tipografia adotada na solução tem como objetivo promover legibilidade, hierarquia visual clara e coerência entre os elementos da interface. A fonte utilizada em todo o sistema é a **Manrope**, uma fonte moderna e sem serifa (sans-serif), adequada para ambientes digitais.
 
-#### 3.4.3. Iconografia e imagens 
 
-*(esta subseção é opcional, caso não existam ícones e imagens, apague esta subseção)*
+| Estilo         | Fonte   | Peso        | Função                                                  |
+|----------------|---------|-------------|----------------------------------------------------------|
+| **H1**         | Manrope | Peso forte  | Título principal de páginas e seções                     |
+| **H2**         | Manrope | Peso forte  | Subtítulo e cabeçalhos secundários                      |
+| **H3**         | Manrope | Peso médio  | Cabeçalhos terciários, títulos de caixas e sessões      |
+| **H4**         | Manrope | Peso leve   | Legendas ou subtítulos de menor destaque                |
+| **Parágrafo (P)** | Manrope | Peso normal | Textos principais, descrições, conteúdos de formulário   |
 
-*Posicione aqui imagens e textos contendo exemplos padronizados de ícones e imagens, com seus respectivos atributos de aplicação, utilizadas na solução.*
 
 ### 3.5. Protótipo de alta fidelidade
 
