@@ -282,7 +282,7 @@ A seguir, apresentamos as principais telas do protótipo de alta fidelidade da a
 
 <div align="center">
 <sub>Figura 5  - Tela inicial</sub>
-<img src="img/tela_1.png" width="100%">
+<img src="img/Tela_1.png" width="100%"><br>
 <sup>Fonte: Material produzido pelo autor (2025)</sup>
 </div>
 
@@ -294,7 +294,7 @@ A tela inicial apresenta uma introdução ao usuário e um botão de entrada ("V
 
 <div align="center">
 <sub>Figura 6  - Homepage</sub>
-<img src="img/tela_2.png" width="100%">
+<img src="img/Tela_2.png" width="100%"><br>
 <sup>Fonte: Material produzido pelo autor (2025)</sup>
 </div>
 
@@ -306,7 +306,7 @@ Esta tela exibe uma lista de tarefas organizadas por categorias, com filtros par
 
 <div align="center">
 <sub>Figura 7  - Criacão de tarefa</sub>
-<img src="img/tela_3.png" width="100%">
+<img src="img/Tela_3.png" width="100%"><br>
 <sup>Fonte: Material produzido pelo autor (2025)</sup>
 </div>
 
@@ -318,7 +318,7 @@ Formulário completo para a criação de uma nova tarefa, incluindo campos como 
 
 <div align="center">
 <sub>Figura 8  - Edição de tarefa</sub>
-<img src="img/tela_4.png" width="100%">
+<img src="img/Tela_4.png" width="100%"><br>
 <sup>Fonte: Material produzido pelo autor (2025)</sup>
 </div>
 
@@ -330,7 +330,7 @@ Interface similar à de criação, porém pré-preenchida com os dados da tarefa
 
 <div align="center">
 <sub>Figura 9  - Gerenciamento</sub>
-<img src="img/tela_5.png" width="100%">
+<img src="img/Tela_5.png" width="100%"><br>
 <sup>Fonte: Material produzido pelo autor (2025)</sup>
 </div>
 
