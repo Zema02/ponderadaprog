@@ -342,7 +342,7 @@ Tela de gerenciamento de categorias utilizadas nas tarefas. O usuário pode visu
 
 <div align="center">
 <sub>Figura 10  - User</sub>
-<img src="img/tela_6.png" width="100%">
+<img src="img/Tela_6.png" width="100%"><br>
 <sup>Fonte: Material produzido pelo autor (2025)</sup>
 </div>
 
