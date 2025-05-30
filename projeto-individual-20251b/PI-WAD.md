@@ -274,7 +274,89 @@ A tipografia adotada na solução tem como objetivo promover legibilidade, hiera
 
 ### 3.5. Protótipo de alta fidelidade
 
-*Posicione aqui algumas imagens demonstrativas de seu protótipo de alta fidelidade e o link para acesso ao protótipo completo (mantenha o link sempre público para visualização).*
+A seguir, apresentamos as principais telas do protótipo de alta fidelidade da aplicação **Task Manager**, desenvolvida com foco em usabilidade, clareza e consistência visual. Todas seguem as diretrizes definidas no guia de estilo.
+
+---
+
+#### Tela 1 - Página de Boas-vindas
+
+<div align="center">
+<sub>Figura 5  - Tela inicial</sub>
+<img src="img/tela_1.png" width="100%">
+<sup>Fonte: Material produzido pelo autor (2025)</sup>
+</div>
+
+A tela inicial apresenta uma introdução ao usuário e um botão de entrada ("Ver Tarefas"), promovendo uma navegação simples e direta. A interface é limpa e objetiva, com ênfase na ação principal.
+
+---
+
+#### Tela 2 - Listagem de Tarefas
+
+<div align="center">
+<sub>Figura 6  - Homepage</sub>
+<img src="img/tela_2.png" width="100%">
+<sup>Fonte: Material produzido pelo autor (2025)</sup>
+</div>
+
+Esta tela exibe uma lista de tarefas organizadas por categorias, com filtros para facilitar a busca. O usuário pode alternar entre "Minhas Tarefas" e "Todas as Tarefas", além de visualizar detalhes como status, prioridade e responsáveis.
+
+---
+
+#### Tela 3 - Criar Nova Tarefa
+
+<div align="center">
+<sub>Figura 7  - Criacão de tarefa</sub>
+<img src="img/tela_3.png" width="100%">
+<sup>Fonte: Material produzido pelo autor (2025)</sup>
+</div>
+
+Formulário completo para a criação de uma nova tarefa, incluindo campos como título, descrição, data de entrega, status e categoria. O botão "Salvar" em destaque azul orienta o usuário para a conclusão da ação.
+
+---
+
+#### Tela 4 - Editar Tarefa
+
+<div align="center">
+<sub>Figura 8  - Edição de tarefa</sub>
+<img src="img/tela_4.png" width="100%">
+<sup>Fonte: Material produzido pelo autor (2025)</sup>
+</div>
+
+Interface similar à de criação, porém pré-preenchida com os dados da tarefa selecionada. Essa abordagem facilita a edição e garante familiaridade na experiência do usuário.
+
+---
+
+#### Tela 5 - Categorias
+
+<div align="center">
+<sub>Figura 9  - Gerenciamento</sub>
+<img src="img/tela_5.png" width="100%">
+<sup>Fonte: Material produzido pelo autor (2025)</sup>
+</div>
+
+Tela de gerenciamento de categorias utilizadas nas tarefas. O usuário pode visualizar a lista atual de categorias, criar novas, editar ou excluir as existentes. A simplicidade dessa tela ajuda na organização e personalização do sistema.
+
+---
+
+#### Tela 6 - Usuários
+
+<div align="center">
+<sub>Figura 10  - User</sub>
+<img src="img/tela_6.png" width="100%">
+<sup>Fonte: Material produzido pelo autor (2025)</sup>
+</div>
+
+Exibição de usuários cadastrados no sistema. Contém informações básicas (nome e email), além da possibilidade de adicionar novos usuários com o botão "Novo usuário".
+
+---
+
+### Link para o protótipo completo
+
+🔗 [Clique aqui para visualizar o protótipo completo](https://www.figma.com/design/rkqPfikExPzOhx3YZg0Fs3/Prototipo-de-Alta-fidelidade-projeto-individual?node-id=0-1&t=iScTesdl33Qk1TV1-1)  
+
+---
+
+Essas telas foram projetadas seguindo os princípios de design responsivo, clareza visual e padronização conforme o guia de estilo apresentado anteriormente.
 
 ### 3.6. WebAPI e endpoints 
 O projeto segue o padrão MVC para separar responsabilidades:
