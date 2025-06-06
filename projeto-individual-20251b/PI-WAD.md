@@ -167,10 +167,10 @@ Tela 1 — Listagem de Tarefas (User Story US02)
 Esta é a tela principal do sistema. O usuário tem acesso rápido à visualização de suas tarefas, podendo filtrá-las por status (pendente, em andamento, concluída) ou por categoria. Cada tarefa é apresentada como um cartão simples, exibindo título, prazo e status, com um botão de edição.
 
 ### Elementos principais:
-- Botão “Nova Tarefa” no topo
+- Botão "Nova Tarefa" no topo
 - Filtros por status (botões)
 - Filtro por categoria (dropdown)
-- Cartões com título, data e botão “Editar”
+- Cartões com título, data e botão "Editar"
 
 
 <div align="center">
@@ -182,7 +182,7 @@ Esta é a tela principal do sistema. O usuário tem acesso rápido à visualiza�
 
 Tela 2 — Cadastro de Nova Tarefa (User Story US01)
 
-Ao clicar em “Nova Tarefa”, o usuário visualiza um formulário modal simples com os campos essenciais para criação da tarefa: título, descrição, prazo, categoria e status inicial. A proposta é que essa criação seja rápida e objetiva.
+Ao clicar em "Nova Tarefa", o usuário visualiza um formulário modal simples com os campos essenciais para criação da tarefa: título, descrição, prazo, categoria e status inicial. A proposta é que essa criação seja rápida e objetiva.
 
 ### Campos presentes:
 
@@ -190,7 +190,7 @@ Ao clicar em “Nova Tarefa”, o usuário visualiza um formulário modal simple
 - Descrição
 - Prazo (campo de data)
 - Categoria (menu suspenso)
-- Status (dropdown com opção padrão “Pendente”)
+- Status (dropdown com opção padrão "Pendente")
 
 <div align="center">
 <sub>Figura 3 - Wireframe</sub>
@@ -200,7 +200,7 @@ Ao clicar em “Nova Tarefa”, o usuário visualiza um formulário modal simple
 
 Tela 3 — Edição de Tarefa (User Story US03)
 
-A tela de edição aparece ao clicar no botão “Editar” de qualquer tarefa listada. O formulário é exibido em um modal com os dados já preenchidos. O usuário pode alterar qualquer campo, principalmente o status da tarefa, de forma rápida.
+A tela de edição aparece ao clicar no botão "Editar" de qualquer tarefa listada. O formulário é exibido em um modal com os dados já preenchidos. O usuário pode alterar qualquer campo, principalmente o status da tarefa, de forma rápida.
 
 ### Campos editáveis:
 
@@ -473,7 +473,109 @@ Todos os endpoints podem ser testados utilizando:
 O arquivo `.rest` está pronto com todas as requisições (GET, POST, PUT, DELETE) e pode ser executado diretamente clicando em **"Send Request"** com a extensão instalada.
 ### 3.7 Interface e Navegação (Semana 7)
 
-*Descreva e ilustre aqui o desenvolvimento do frontend do sistema web, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar.*
+A interface do TaskMaster foi desenvolvida seguindo os princípios de design centrado no usuário, com foco em usabilidade e acessibilidade. 
+
+#### 3.7.1 Tecnologias e Ferramentas
+
+Para o desenvolvimento da interface, foram utilizadas as seguintes tecnologias:
+
+- **EJS (Embedded JavaScript)**: Template engine para renderização dinâmica das páginas
+- **CSS3**: Estilização com layouts tradicionais
+- **JavaScript**: Interatividade e manipulação do DOM
+
+#### 3.7.2 Estrutura da Interface
+
+A interface do sistema foi estruturada em três componentes principais:
+
+1. **Header (Cabeçalho)**
+   - Logo do sistema
+   - Menu de navegação principal
+   - Área de usuário com avatar e menu dropdown
+
+2. **Main Content (Conteúdo Principal)**
+   - Área dinâmica que muda conforme a rota
+   - Container com padding adequado
+   - Navegação hierárquica
+
+3. **Footer (Rodapé)**
+   - Informações de copyright
+   - Links úteis
+   - Versão do sistema
+
+#### 3.7.3 Navegação e Fluxos
+
+O sistema implementa os seguintes fluxos de navegação:
+
+1. **Dashboard**
+   - Visão geral das tarefas
+   - Lista de tarefas recentes
+
+2. **Gerenciamento de Tarefas**
+   - Lista com filtros por status
+   - Formulário de criação/edição
+   - Ações rápidas (editar/excluir)
+
+3. **Categorias**
+   - Lista de categorias
+   - Formulário de criação
+
+4. **Usuários**
+   - Lista de usuários
+   - Perfil do usuário
+
+#### 3.7.4 Componentes da Interface
+
+Os principais componentes implementados incluem:
+
+1. **Tabelas**
+   - Cabeçalho
+   - Ordenação por colunas
+   - Filtros básicos
+
+2. **Formulários**
+   - Campos obrigatórios
+   - Mensagens de erro/sucesso
+
+3. **Cards**
+   - Informações resumidas
+   - Ações básicas
+   - Status visual
+
+4. **Modais**
+   - Confirmação de ações
+   - Formulários
+
+#### 3.7.5 Limitações Atuais
+
+O sistema apresenta algumas limitações que precisam ser consideradas:
+
+1. **Responsividade**
+   - A interface atual não é totalmente responsiva
+   - Otimizada apenas para visualização em desktop
+   - Necessita adaptações para diferentes tamanhos de tela
+
+2. **Acessibilidade**
+   - Implementação básica de contraste
+   - Necessidade de melhorias na navegação por teclado
+   - Falta de suporte completo a leitores de tela
+
+#### 3.7.6 Feedback Visual
+
+O sistema fornece feedback visual básico através de:
+
+- Mensagens de sucesso/erro
+- Confirmações de ações
+- Estados de hover/focus
+
+#### 3.7.7 Próximos Passos
+
+Para melhorias futuras da interface, planeja-se:
+
+1. Implementar responsividade para diferentes dispositivos
+2. Melhorar a acessibilidade do sistema
+3. Adicionar tema escuro
+4. Implementar drag-and-drop para reordenação
+5. Adicionar visualizações alternativas (kanban, calendário)
 
 ---
 
