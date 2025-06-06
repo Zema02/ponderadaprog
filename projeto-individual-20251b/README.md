@@ -1,6 +1,6 @@
 # 📋 Sistema de Gerenciamento de Tarefas
 
-Este projeto é uma aplicação web para gerenciamento de tarefas, construída com **Node.js**, **Express.js**, **EJS** e banco de dados **PostgreSQL**, organizada com o padrão arquitetural **MVC**.
+Este projeto é uma aplicação web para gerenciamento de tarefas, construída com **Node.js**, **Express.js** e **EJS**, organizada com o padrão arquitetural **MVC**.
 
 Usuários podem criar, editar, excluir e visualizar tarefas, que são categorizadas e associadas a responsáveis. O sistema inclui um backend funcional com API REST e visualização básica via EJS.
 
@@ -16,13 +16,13 @@ Usuários podem criar, editar, excluir e visualizar tarefas, que são categoriza
 
 ---
 
-## ⚙️ Configuração inicial
+## ⚙️ Como iniciar o projeto
 
 ### 1. Clone este repositório:
 
 ```bash
-git clone <url-do-seu-repo>
-cd meu-projeto
+git clone <https://github.com/Zema02/ponderadaprog/tree/main>
+cd projeto-individual-20251b
 ```
 
 ### 2. Instale as dependências:
@@ -31,77 +31,33 @@ cd meu-projeto
 npm install
 ```
 
-### 3. Crie o banco de dados `tarefas_db` no pgAdmin ou via terminal:
-
-```sql
-CREATE DATABASE tarefas_db;
-```
-
----
-
-### 4. Configure o arquivo `.env`
-
-> O projeto já inclui um `.env` preenchido para facilitar testes locais:
-
-```env
-DB_HOST=localhost
-DB_PORT=5432
-DB_USER=postgres
-DB_PASSWORD=1234
-DB_NAME=tarefas_db
-```
-
-⚠️ Este `.env` usa uma senha genérica apenas para fins acadêmicos e deve ser alterado em ambientes reais.
-
----
-
-## 🚀 Comandos disponíveis
-
-| Comando                   | Descrição                                                                 |
-|---------------------------|---------------------------------------------------------------------------|
-| `npm start`               | Inicia o servidor na porta 3000                                           |
-| `npm run migrate`         | Executa migração básica (`init.sql`)                                      |
-| `npm run migrate-full`    | Executa migração completa com estrutura + dados (`init-completo.sql`)     |
-| `npm run seed`            | (Opcional) Popula dados usando script JS (`seed.js`)                      |
-
----
-
-## 🔁 Como rodar o projeto localmente (modo completo)
-
-1. Rode o comando abaixo para criar estrutura + dados de exemplo:
-
-```bash
-npm run migrate-full
-```
-
-2. Inicie o servidor:
+### 3. Inicie o servidor:
 
 ```bash
 npm start
 ```
 
-3. Acesse no navegador:
+Após executar estes comandos, você verá a mensagem:
+```
+Servidor rodando na porta 3000
+Acesse: http://localhost:3000
+```
 
-- Página inicial: [http://localhost:3000](http://localhost:3000)
-- API REST: [http://localhost:3000/api/tarefas](http://localhost:3000/api/tarefas)
+Agora você pode acessar a aplicação no seu navegador através do endereço: [http://localhost:3000](http://localhost:3000)
 
 ---
 
 ## 📂 Estrutura de Pastas
 
 ```
-meu-projeto/
-├── config/               # Conexão com o PostgreSQL
+projeto-individual-20251b/
 ├── controllers/          # Lógica da aplicação
-├── migrations/           # Scripts SQL e migradores
-├── models/               # (Opcional) Representações dos dados
-├── routes/               # Rotas da API
-├── views/                # Página inicial com EJS
-├── assets/               # CSS e imagens
-├── api-testes.rest       # Testes REST para VSCode
-├── .env                  # Configuração local (incluído para facilitar testes)
-├── server.js             # Inicialização do servidor
-└── package.json          # Scripts e dependências
+├── routes/              # Rotas da API
+├── views/               # Templates EJS
+├── public/              # Arquivos estáticos (CSS, imagens)
+├── img/                 # Imagens do projeto
+├── server.js            # Inicialização do servidor
+└── package.json         # Scripts e dependências
 ```
 
 ---

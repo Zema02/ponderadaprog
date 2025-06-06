@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <a href="/" class="logo">TaskMaster</a>
+      
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="/">Dashboard</a></li>
+          <li><a href="/tarefas">Minhas Tarefas</a></li>
+          <li><a href="/categorias">Categorias</a></li>
+          <li><a href="/usuarios">Usuários</a></li>
+        </ul>
+      </nav>
+      
+      <div class="user-info">
+        <span>Olá, <%= user.name %></span>
+        <div class="dropdown">
+          <img src="<%= user.avatar || '/images/avatar-default.png' %>" alt="Avatar" class="user-avatar">
+          <div class="dropdown-content">
+            <a href="/perfil">Editar Perfil</a>
+            <a href="/logout">Sair</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1 class="page-title">Meu Perfil</h1>
+        <p class="page-subtitle">Visualize e edite suas informações pessoais</p>
+      </div>
+
+      <!-- Profile Card -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Informações Pessoais</h2>
+          <div>
+            <button id="btn-editar-perfil" class="btn btn-warning" onclick="alternarEdicaoPerfil()">Editar Perfil</button>
+            <button id="btn-salvar-perfil" class="btn btn-success hidden" onclick="salvarPerfil()">Salvar</button>
+            <button id="btn-cancelar-perfil" class="btn btn-secondary hidden" onclick="alternarEdicaoPerfil()">Cancelar</button>
+          </div>
+        </div>
+        
+        <form id="form-perfil">
+          <div class="text-center mb-3">
+            <img src="<%= user.avatar || '/images/avatar-default.png' %>" alt="Avatar" 
+                 style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid #667eea;">
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">Nome Completo</label>
+              <div class="campo-leitura"><%= user.name %></div>
+              <input type="text" name="name" class="form-control campo-edicao hidden" value="<%= user.name %>">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <div class="campo-leitura"><%= user.email %></div>
+              <input type="email" name="email" class="form-control campo-edicao hidden" value="<%= user.email %>">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">Telefone</label>
+              <div class="campo-leitura"><%= user.telefone %></div>
+              <input type="tel" name="telefone" class="form-control campo-edicao hidden" value="<%= user.telefone %>">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Cargo</label>
+              <div class="campo-leitura"><%= user.cargo %></div>
+              <select name="cargo" class="form-select campo-edicao hidden">
+                <option value="Desenvolvedor Junior" <%= user.cargo === 'Desenvolvedor Junior' ? 'selected' : '' %>>Desenvolvedor Junior</option>
+                <option value="Desenvolvedor Pleno" <%= user.cargo === 'Desenvolvedor Pleno' ? 'selected' : '' %>>Desenvolvedor Pleno</option>
+                <option value="Desenvolvedor Senior" <%= user.cargo === 'Desenvolvedor Senior' ? 'selected' : '' %>>Desenvolvedor Senior</option>
+                <option value="Designer UI/UX" <%= user.cargo === 'Designer UI/UX' ? 'selected' : '' %>>Designer UI/UX</option>
+                <option value="Analista de Sistemas" <%= user.cargo === 'Analista de Sistemas' ? 'selected' : '' %>>Analista de Sistemas</option>
+                <option value="Gerente de Projetos" <%= user.cargo === 'Gerente de Projetos' ? 'selected' : '' %>>Gerente de Projetos</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">Situação de Estudo</label>
+              <div class="campo-leitura"><%= user.situacaoEstudo %></div>
+              <select name="situacaoEstudo" class="form-select campo-edicao hidden">
+                <option value="Ensino Médio" <%= user.situacaoEstudo === 'Ensino Médio' ? 'selected' : '' %>>Ensino Médio</option>
+                <option value="Cursando Superior" <%= user.situacaoEstudo === 'Cursando Superior' ? 'selected' : '' %>>Cursando Superior</option>
+                <option value="Superior Completo" <%= user.situacaoEstudo === 'Superior Completo' ? 'selected' : '' %>>Superior Completo</option>
+                <option value="Pós-graduação" <%= user.situacaoEstudo === 'Pós-graduação' ? 'selected' : '' %>>Pós-graduação</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Situação de Trabalho</label>
+              <div class="campo-leitura"><%= user.situacaoTrabalho %></div>
+              <select name="situacaoTrabalho" class="form-select campo-edicao hidden">
+                <option value="Empregado" <%= user.situacaoTrabalho === 'Empregado' ? 'selected' : '' %>>Empregado</option>
+                <option value="Desempregado" <%= user.situacaoTrabalho === 'Desempregado' ? 'selected' : '' %>>Desempregado</option>
+                <option value="Freelancer" <%= user.situacaoTrabalho === 'Freelancer' ? 'selected' : '' %>>Freelancer</option>
+                <option value="Empresário" <%= user.situacaoTrabalho === 'Empresário' ? 'selected' : '' %>>Empresário</option>
+                <option value="Estudante" <%= user.situacaoTrabalho === 'Estudante' ? 'selected' : '' %>>Estudante</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Área de Atuação</label>
+            <div class="campo-leitura"><%= user.areaAtuacao %></div>
+            <select name="areaAtuacao" class="form-select campo-edicao hidden">
+              <option value="Tecnologia da Informação" <%= user.areaAtuacao === 'Tecnologia da Informação' ? 'selected' : '' %>>Tecnologia da Informação</option>
+              <option value="Design e Criação" <%= user.areaAtuacao === 'Design e Criação' ? 'selected' : '' %>>Design e Criação</option>
+              <option value="Marketing" <%= user.areaAtuacao === 'Marketing' ? 'selected' : '' %>>Marketing</option>
+              <option value="Vendas" <%= user.areaAtuacao === 'Vendas' ? 'selected' : '' %>>Vendas</option>
+              <option value="Administração" <%= user.areaAtuacao === 'Administração' ? 'selected' : '' %>>Administração</option>
+              <option value="Recursos Humanos" <%= user.areaAtuacao === 'Recursos Humanos' ? 'selected' : '' %>>Recursos Humanos</option>
+              <option value="Educação" <%= user.areaAtuacao === 'Educação' ? 'selected' : '' %>>Educação</option>
+            </select>
+          </div>
+
+          <!-- Campos de senha (apenas na edição) -->
+          <div class="campo-edicao hidden">
+            <hr style="margin: 2rem 0;">
+            <h3 style="margin-bottom: 1rem;">Alterar Senha</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label">Nova Senha</label>
+                <input type="password" name="novaSenha" class="form-control" 
+                       placeholder="Digite a nova senha (deixe em branco para não alterar)">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Confirmar Nova Senha</label>
+                <input type="password" name="confirmarNovaSenha" class="form-control" 
+                       placeholder="Confirme a nova senha">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="text-align: center; padding: 2rem; margin-top: 3rem; background-color: #f8f9fa; color: #6c757d;">
+    <p>&copy; 2024 TaskMaster - Sistema de Gerenciamento de Tarefas</p>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html> 

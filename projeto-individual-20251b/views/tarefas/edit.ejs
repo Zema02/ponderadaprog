@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <a href="/" class="logo">TaskMaster</a>
+      
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="/">Dashboard</a></li>
+          <li><a href="/tarefas">Minhas Tarefas</a></li>
+          <li><a href="/categorias">Categorias</a></li>
+          <li><a href="/usuarios">Usuários</a></li>
+        </ul>
+      </nav>
+      
+      <div class="user-info">
+        <span>Olá, Usuário</span>
+        <div class="dropdown">
+          <img src="/images/avatar-default.png" alt="Avatar" class="user-avatar">
+          <div class="dropdown-content">
+            <a href="/perfil">Editar Perfil</a>
+            <a href="/logout">Sair</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1 class="page-title">Editar Tarefa</h1>
+        <p class="page-subtitle">Altere as informações da tarefa</p>
+      </div>
+
+      <!-- Form Card -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Dados da Tarefa</h2>
+          <a href="/tarefas" class="btn btn-secondary">Voltar</a>
+        </div>
+        
+        <form class="form-tarefa" data-modo="editar" data-id="<%= tarefa.id %>">
+          <div class="form-group">
+            <label for="nome" class="form-label">Nome da Tarefa *</label>
+            <input type="text" id="nome" name="nome" class="form-control" required 
+                   value="<%= tarefa.nome %>" placeholder="Digite o nome da tarefa">
+          </div>
+
+          <div class="form-group">
+            <label for="descricao" class="form-label">Descrição</label>
+            <textarea id="descricao" name="descricao" class="form-control form-textarea" 
+                      placeholder="Descreva os detalhes da tarefa"><%= tarefa.descricao %></textarea>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label for="categoria" class="form-label">Categoria *</label>
+              <select id="categoria" name="categoria" class="form-select" required>
+                <option value="">Selecione uma categoria</option>
+                <% categorias.forEach(function(categoria) { %>
+                <option value="<%= categoria %>" <%= tarefa.categoria === categoria ? 'selected' : '' %>><%= categoria %></option>
+                <% }); %>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="status" class="form-label">Status *</label>
+              <select id="status" name="status" class="form-select" required>
+                <option value="Pendente" <%= tarefa.status === 'Pendente' ? 'selected' : '' %>>Pendente</option>
+                <option value="Em andamento" <%= tarefa.status === 'Em andamento' ? 'selected' : '' %>>Em andamento</option>
+                <option value="Concluída" <%= tarefa.status === 'Concluída' ? 'selected' : '' %>>Concluída</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label for="prioridade" class="form-label">Prioridade *</label>
+              <select id="prioridade" name="prioridade" class="form-select" required>
+                <option value="Baixa" <%= tarefa.prioridade === 'Baixa' ? 'selected' : '' %>>Baixa</option>
+                <option value="Média" <%= tarefa.prioridade === 'Média' ? 'selected' : '' %>>Média</option>
+                <option value="Alta" <%= tarefa.prioridade === 'Alta' ? 'selected' : '' %>>Alta</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="responsavel" class="form-label">Responsável *</label>
+              <input type="text" id="responsavel" name="responsavel" class="form-control" required 
+                     value="<%= tarefa.responsavel %>" placeholder="Nome do responsável">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="projeto" class="form-label">Projeto</label>
+            <input type="text" id="projeto" name="projeto" class="form-control" 
+                   value="<%= tarefa.projeto %>" placeholder="Nome do projeto">
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label for="dataInicio" class="form-label">Data de Início</label>
+              <input type="date" id="dataInicio" name="dataInicio" class="form-control" 
+                     value="<%= tarefa.dataInicio %>">
+            </div>
+
+            <div class="form-group">
+              <label for="dataFim" class="form-label">Data de Fim</label>
+              <input type="date" id="dataFim" name="dataFim" class="form-control" 
+                     value="<%= tarefa.dataFim %>">
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 2rem;">
+            <a href="/tarefas" class="btn btn-secondary">Cancelar</a>
+            <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="text-align: center; padding: 2rem; margin-top: 3rem; background-color: #f8f9fa; color: #6c757d;">
+    <p>&copy; 2024 TaskMaster - Sistema de Gerenciamento de Tarefas</p>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html> 

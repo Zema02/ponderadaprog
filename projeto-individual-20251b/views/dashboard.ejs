@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <a href="/" class="logo">TaskMaster</a>
+      
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="/">Dashboard</a></li>
+          <li><a href="/tarefas">Minhas Tarefas</a></li>
+          <li><a href="/categorias">Categorias</a></li>
+          <li><a href="/usuarios">Usuários</a></li>
+        </ul>
+      </nav>
+      
+      <div class="user-info">
+        <span>Olá, <%= user.name %></span>
+        <div class="dropdown">
+          <img src="<%= user.avatar || '/images/avatar-default.png' %>" alt="Avatar" class="user-avatar">
+          <div class="dropdown-content">
+            <a href="/perfil">Editar Perfil</a>
+            <a href="/logout">Sair</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1 class="page-title">Dashboard</h1>
+        <p class="page-subtitle">Bem-vindo ao TaskMaster! Gerencie suas tarefas de forma eficiente.</p>
+      </div>
+
+      <!-- Statistics Cards -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number"><%= stats.totalTarefas %></div>
+          <div class="stat-label">Total de Tarefas</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number"><%= stats.tarefasPendentes %></div>
+          <div class="stat-label">Tarefas Pendentes</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number"><%= stats.tarefasAndamento %></div>
+          <div class="stat-label">Em Andamento</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number"><%= stats.tarefasConcluidas %></div>
+          <div class="stat-label">Concluídas</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number"><%= stats.totalCategorias %></div>
+          <div class="stat-label">Categorias</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number"><%= stats.totalUsuarios %></div>
+          <div class="stat-label">Usuários</div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Ações Rápidas</h2>
+        </div>
+        <div class="quick-actions">
+          <a href="/tarefas/nova" class="action-card">
+            <div class="action-icon">📝</div>
+            <div class="action-title">Nova Tarefa</div>
+            <div class="action-description">Criar uma nova tarefa rapidamente</div>
+          </a>
+          <a href="/tarefas" class="action-card">
+            <div class="action-icon">📋</div>
+            <div class="action-title">Ver Tarefas</div>
+            <div class="action-description">Visualizar e gerenciar suas tarefas</div>
+          </a>
+          <a href="/categorias" class="action-card">
+            <div class="action-icon">🏷️</div>
+            <div class="action-title">Categorias</div>
+            <div class="action-description">Organizar tarefas por categorias</div>
+          </a>
+          <a href="/usuarios" class="action-card">
+            <div class="action-icon">👥</div>
+            <div class="action-title">Usuários</div>
+            <div class="action-description">Gerenciar usuários do sistema</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Recent Activity -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Atividades Recentes</h2>
+        </div>
+        <div style="padding: 1rem 0;">
+          <div style="display: flex; align-items: center; padding: 0.75rem 0; border-bottom: 1px solid #eee;">
+            <div style="width: 8px; height: 8px; background-color: #28a745; border-radius: 50%; margin-right: 1rem;"></div>
+            <div>
+              <strong>Tarefa concluída:</strong> Design da interface
+              <div style="font-size: 0.875rem; color: #666;">há 2 horas</div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; padding: 0.75rem 0; border-bottom: 1px solid #eee;">
+            <div style="width: 8px; height: 8px; background-color: #667eea; border-radius: 50%; margin-right: 1rem;"></div>
+            <div>
+              <strong>Nova tarefa criada:</strong> Implementar autenticação
+              <div style="font-size: 0.875rem; color: #666;">há 4 horas</div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; padding: 0.75rem 0;">
+            <div style="width: 8px; height: 8px; background-color: #ffc107; border-radius: 50%; margin-right: 1rem;"></div>
+            <div>
+              <strong>Usuário adicionado:</strong> Carlos Lima
+              <div style="font-size: 0.875rem; color: #666;">ontem</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="text-align: center; padding: 2rem; margin-top: 3rem; background-color: #f8f9fa; color: #6c757d;">
+    <p>&copy; 2024 TaskMaster - Sistema de Gerenciamento de Tarefas</p>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html> 
