@@ -597,5 +597,89 @@ Para melhorias futuras da interface, planeja-se:
 
 _Incluir as principais referências de seu projeto, para que seu parceiro possa consultar caso ele se interessar em aprofundar. Um exemplo de referência de livro e de site:_<br>
 
+## Resumo Técnico e Aprendizados
+
+### Decisões Técnicas
+
+#### Stack Tecnológica
+- **Backend**: Node.js com Express.js
+- **Frontend**: EJS (Embedded JavaScript) para templates
+- **Banco de Dados**: PostgreSQL
+- **Arquitetura**: MVC (Model-View-Controller)
+- **Conexão com BD**: Pacote `pg` para PostgreSQL
+- **Versionamento**: Git
+
+#### Justificativas Técnicas
+1. **Node.js + Express**: Escolhido pela simplicidade e performance para APIs REST
+2. **PostgreSQL**: Selecionado pela robustez e suporte a relacionamentos complexos
+3. **EJS**: Adotado por ser leve e fácil de integrar com Express
+4. **Arquitetura MVC**: Implementada para separar claramente as responsabilidades do sistema
+
+### Aprendizados e Desafios
+
+#### Principais Aprendizados
+1. **Arquitetura MVC**
+   - Compreensão prática da separação de responsabilidades
+   - Implementação efetiva do padrão em um projeto real
+
+2. **Banco de Dados**
+   - Experiência com PostgreSQL e queries SQL
+   - Aprendizado sobre migrações e estruturação de dados
+
+3. **Desenvolvimento Web**
+   - Prática com rotas e controllers
+   - Implementação de APIs RESTful
+   - Manipulação de templates com EJS
+
+#### Desafios Superados
+1. **Integração Backend-Frontend**
+   - Desafio: Sincronização entre EJS e Express
+   - Solução: Implementação de rotas bem definidas e templates estruturados
+
+2. **Banco de Dados**
+   - Desafio: Estruturação das tabelas e relacionamentos
+   - Solução: Planejamento cuidadoso do modelo de dados e uso de migrations
+
+3. **Autenticação e Segurança**
+   - Desafio: Implementação de sistema de usuários seguro
+   - Solução: Uso de variáveis de ambiente e boas práticas de segurança
+
+### Pontos Fortes e Melhorias Futuras
+
+#### Pontos que Funcionaram Bem
+1. **Arquitetura**
+   - Separação clara de responsabilidades
+   - Código organizado e manutenível
+   - Estrutura escalável
+
+2. **Interface**
+   - Design limpo e intuitivo
+   - Navegação clara
+   - Feedback visual adequado
+
+3. **Performance**
+   - Queries SQL otimizadas
+   - Carregamento rápido das páginas
+   - Boa gestão de recursos
+
+#### Pontos para Melhorar
+1. **Técnicos**
+   - Implementar testes automatizados
+   - Adicionar documentação mais detalhada
+   - Melhorar tratamento de erros
+
+2. **Funcionais**
+   - Adicionar sistema de notificações
+   - Implementar drag-and-drop para tarefas
+   - Criar visualização em calendário
+
+3. **UX/UI**
+   - Tornar a interface totalmente responsiva
+   - Implementar tema escuro
+   - Melhorar acessibilidade
+
+### Conclusão
+O projeto serviu como uma excelente oportunidade para aplicar conceitos teóricos em um cenário real. A arquitetura MVC, combinada com tecnologias modernas, resultou em uma aplicação robusta e escalável. Os desafios encontrados foram importantes para o crescimento técnico, e as melhorias planejadas servirão como base para futuras evoluções do sistema.
+
 ---
 ---
